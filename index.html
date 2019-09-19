@@ -12,12 +12,12 @@
   <div class='row colors'>
   </div>
   <div class='row labels'>
-    <div class='label'>0</div>
+    <div class='label'>1</div>
     <div class='label'>50</div>
-    <div class='label'>150</div>
-    <div class='label'>250</div>
-    <div class='label'>350</div>
-    <div class='label'>450+</div>
+    <div class='label'>100</div>
+    <div class='label'>200</div>
+    <div class='label'>300</div>
+    <div class='label'>400+</div>
   </div>
 </div>
 <div class='session' id='sliderbar'>
@@ -86,7 +86,7 @@ a {
 }
 
 .colors {
-  background: linear-gradient(to right, #2dc4b2, #3bb3c3, #669ec4, #8b88b6, #a2719b, #aa5e79);
+  background: linear-gradient(to right, #b2f4ed, #3bb3c3, #669ec4, #8b88b6, #a2719b, #af0a44);
   margin-bottom: 5px;
 }
 
@@ -127,17 +127,17 @@ map.on('load', function() {
         'interpolate',
         ['linear'],
         ['number', ['get', 'activity']],
-        0, '#2DC4B2',
+        0, '#b2f4ed',
         50, '#3BB3C3',
-        150, '#669EC4',
-        250, '#8B88B6',
-        350, '#A2719B',
-        450, '#AA5E79'
+        100, '#669EC4',
+        200, '#8B88B6',
+        300, '#A2719B',
+        400, '#af0a44'
       ],
-      'circle-opacity': 0.6
+      'circle-opacity': 0.7
     },
-
   })
+
   document.getElementById('slider').addEventListener('input', function(e) {
   var hour = parseInt(e.target.value);
   // update the map
@@ -149,7 +149,8 @@ map.on('load', function() {
 
   // update text in the UI
   document.getElementById('hour').innerText = hour12 + ampm;
-});
+})
+// })
 document.getElementById('filters').addEventListener('change', function(e) {
   var day = e.target.value;
   // update the map filter
